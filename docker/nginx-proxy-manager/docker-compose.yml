@@ -1,0 +1,12 @@
+version: "3.6"
+services:
+  container_name: "nginx-proxy-manager"
+  image: "jc21/nginx-proxy-manager:latest"
+  ports:
+     - "443:443/tcp"
+     - "80:80/tcp"
+     - "81:81/tcp"
+  restart: "unless-stopped"
+  volumes:
+     - "/home/ran-markovich/npm/data:/data"
+     - "/home/ran-markovich/npm/letsencrypt:/etc/letsencrypt"

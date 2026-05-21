@@ -1,0 +1,8 @@
+version: "3.6"
+services:
+    image: "available-spots-finder_bot"
+    container_name: "available-spots-finder"
+    restart: "unless-stopped"
+    environment:
+      - "TELEGRAM_BOT_TOKEN=${BOT_TOKEN_SECRET}"
+      - "GPG_KEY=${GPG_SECRET}"

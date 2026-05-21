@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  ddns-updater:
+    image: qmcgaw/ddns-updater:latest
+    container_name: ddns-updater
+    restart: unless-stopped
+    ports:
+      - "8000:8000/tcp" # The Web UI to check your IP status
+    volumes:
+      - ./data:/updater/data
+    environment:
+      - TZ=Asia/Jerusalem
+      - UPDATE_COOLDOWN_PERIOD=5m
+      - PUBLICIP_FETCHERS=all

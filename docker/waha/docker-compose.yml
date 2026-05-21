@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+    container_name: "waha"
+    environment:
+      - "WAHA_API_KEY=${WAHA_SECRET}"
+    image: "devlikeapro/waha:noweb-2026.4.3"
+    ports:
+      - "3000:3000/tcp"
+    volumes:
+      - "/home/ran-markovich/.waha_sessions:/app/.sessions"
+    restart: "unless-stopped"
