@@ -7,5 +7,5 @@ services:
     ports:
       - "3000:3000/tcp"
     volumes:
-      - "/home/ran-markovich/.waha_sessions:/app/.sessions"
+      - "${HOME}/.waha_sessions:/app/.sessions"
     restart: "unless-stopped"

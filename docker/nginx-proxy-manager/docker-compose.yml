@@ -8,5 +8,5 @@ services:
      - "81:81/tcp"
   restart: "unless-stopped"
   volumes:
-     - "/home/ran-markovich/npm/data:/data"
-     - "/home/ran-markovich/npm/letsencrypt:/etc/letsencrypt"
+     - "${HOME}/npm/data:/data"
+     - "${HOME}/npm/letsencrypt:/etc/letsencrypt"

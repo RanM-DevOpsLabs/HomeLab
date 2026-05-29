@@ -12,5 +12,5 @@ services:
     ports:
       - "5678:5678/tcp"
     volumes:
-      - "/home/ran-markovich/n8n_data:/home/node/.n8n"
+      - "${HOME}/n8n_data:/home/node/.n8n"
     restart: "unless-stopped"
