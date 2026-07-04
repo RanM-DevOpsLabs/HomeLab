@@ -1,0 +1,24 @@
+version: "3.6"
+services:
+  luna-haircut-finder:
+    build: .
+    container_name: "luna-haircut-finder"
+    restart: "unless-stopped"
+    environment:
+      - "TZ=Asia/Jerusalem"
+      - "LUNA_BOT_TOKEN=${LUNA_BOT_TOKEN}"
+      - "LUNA_CHAT_ID=${LUNA_CHAT_ID}"
+      - "LUNA_POLL_INTERVAL=${LUNA_POLL_INTERVAL:-3600}"
+      - "LUNA_BUSINESS_ID=${LUNA_BUSINESS_ID:-62d96ea8ead1f7324846e599}"
+      - "LUNA_SERVICE_IDS=${LUNA_SERVICE_IDS:-6728cb964f31bc1892c9936e}"
+      - "LUNA_THRESHOLD_DATE=${LUNA_THRESHOLD_DATE:-}"
+      - "LUNA_SPOTS_TO_SHOW=${LUNA_SPOTS_TO_SHOW:-3}"
+      - "LUNA_STATE_FILE=/data/state.json"
+    volumes:
+      # Named volume (not a ${HOME} bind mount): the container runs as non-root
+      # user `luna`, and Docker initializes a fresh named volume with the image's
+      # /data ownership, so the process can write state without a host-side chown.
+      - "luna-data:/data"
+
+volumes:
+  luna-data:
