@@ -1,0 +1,32 @@
+# Local .terraform directory containing downloaded providers and modules
+.terraform/
+
+# Lock files for state - managed automatically by Terraform during execution
+.terraform.tfstate.lock.info
+
+# Local state files (State should be stored in a remote backend, not Git)
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+crash.*.log
+*.log
+
+# Variables files containing sensitive data/secrets
+*.tfvars
+*.tfvars.json
+
+# Local environment variables and CLI configurations
+.terraformrc
+terraform.rc
+
+# Override files (local changes not intended for the shared repository)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Generated execution plans from 'terraform plan -out=tfplan'
+*.tfplan
+
