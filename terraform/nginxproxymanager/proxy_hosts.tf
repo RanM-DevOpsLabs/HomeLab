@@ -3,7 +3,7 @@ resource "nginxproxymanager_proxy_host" "haranmarkovichcom" {
         allow_websocket_upgrade = true
         block_exploits          = true
         caching_enabled         = false
-        certificate_id          = 6
+        certificate_id          = nginxproxymanager_certificate_letsencrypt.haranmarkovichcom_cert.id
         domain_names            = [
             "ha.ranmarkovich.com",
         ]
@@ -24,7 +24,7 @@ resource "nginxproxymanager_proxy_host" "n8nranmarkovichcom" {
   allow_websocket_upgrade = true
   block_exploits          = true
   caching_enabled         = false
-  certificate_id          = 9
+  certificate_id          = nginxproxymanager_certificate_letsencrypt.n8nranmarkovichcom_cert.id
   domain_names            = ["n8n.ranmarkovich.com"]
   enabled                 = true
   forward_host            = "192.168.122.1"
