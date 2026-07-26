@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "nginxproxymanager" {
-  url      = "http://192.168.1.220:81"
-  username = "ranlearndevops@gmail.com"
-  password = "rMpQWP2G3trQHyA"
+  url      = "NPM_URL"
+  username = "NPM_ADMIN_USERNAME"
+  password = "NPM_ADMIN_PASSWORD"
 }
